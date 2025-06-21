@@ -1,0 +1,327 @@
+/* Layout setup */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Full page container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Blurred + darkened background */
+.page-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  filter:  brightness(0.6);
+  z-index: -1;
+}
+
+/* Main content */
+.app {
+  flex: 1;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+}
+
+/* Footer pinned to bottom */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: #ffffffaa;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding-bottom: 20px;
+}
+
+.footer .creator {
+  font-weight: bold;
+  color: #00e0ff;
+}
+
+.upload-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Stylish "Choose File" button using label */
+.file-input-label {
+  background: #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #00bcd4;
+}
+
+.file-input-label:hover {
+  background: #e0f7fa;
+}
+
+/* Hide actual file input */
+.file-input-label input[type="file"] {
+  display: none;
+}
+
+/* Modern Upload Button */
+.upload-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00bcd4;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+  background-color: #008fa1;
+  transform: translateY(-2px);
+}
+
+.upload-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* Common button style for all styled buttons */
+.styled-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00bcd4;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.styled-btn:hover {
+  background-color: #008fa1;
+  transform: translateY(-2px);
+}
+
+.styled-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto 10px;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 12px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #00bcd4;
+  width: 0%;
+  transition: width 0.2s ease;
+  border-radius: 10px;
+}
+
+.progress-text {
+  margin-top: 8px;
+  color: #ffffffcc;
+  font-size: 14px;
+}
+
+
+@keyframes loadProgress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.progress-text {
+  margin-top: 8px;
+  color: #ffffffcc;
+  font-size: 14px;
+}
+
+.download-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Increase this value as needed */
+  padding-top: 50px; /* <-- Add this line */
+}
+
+
+.main-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.sub-heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #f0f0f0;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.3s ease-out;
+}
+
+/* Optional animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-comparison-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.image-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.image-box {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.image-box img {
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+}
+
+
+.download-below {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.download-btn {
+  margin-top: 30px; /* Add space between images and button */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0097a7;
+}
+
+.image-comparison-wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styled dropdown to match buttons */
+.mode-select {
+  padding: 10px 24px;
+  border: 2px solid #00bcd4; /* teal border like Choose File */
+  border-radius: 8px;
+  background: linear-gradient(to right, #ffffff, #e0f7fa); /* gradient: white to light teal */
+  color: #004d4d; /* dark teal text */
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  appearance: none;
+}
+
+.mode-select:hover {
+  background: linear-gradient(to right, #d0f0f7, #c3f6fc); /* hover effect */
+  transform: translateY(-2px);
+}
+
+.mode-select:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #777;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+
+
+
