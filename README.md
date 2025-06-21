@@ -7,7 +7,7 @@ This project is a web-based AI image restoration tool built using Flask, GFPGAN,
 
 ## 📁 Project Structure
 
-'''
+
 image_restoration/
 ├── flask_api/
 │ ├── app.py
@@ -20,7 +20,7 @@ image_restoration/
 │ └── archs/rrdbnet_arch.py
 ├── requirements.txt
 └── README.md
-'''
+
 
 
 ## 🚀 Features
