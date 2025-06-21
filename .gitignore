@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+env/
+venv/
+realesrgan_env/
+gfpgan_env/
+*.sqlite3
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+build/
+dist/
+
+# Logs and results
+*.log
+*.bak
+.DS_Store
+inputs/
+static/results/
+
+# Model Weights
+gfpgan/weights/*.pth
+realesrgan/weights/*.pth
