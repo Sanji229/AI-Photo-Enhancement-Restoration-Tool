@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # Image_face_restoration
-=======
+==============================================================
 # 🧠 Image & Face Restoration using GFPGAN + Real-ESRGAN
 
 This project is a web-based AI image restoration tool built using Flask, GFPGAN, and Real-ESRGAN. It allows users to restore faces (GFPGAN) and enhance image resolution (Real-ESRGAN), or apply both sequentially.
@@ -40,14 +40,11 @@ git clone https://github.com/xinntao/Real-ESRGAN.git
 
 2. Create a virtual environment and activate it:
 
-
-
 cd image_restoration
 python -m venv venv
 venv\Scripts\activate
 
 3. Install the requirements:
-
 
 pip install -r requirements.txt
 
@@ -55,15 +52,9 @@ pip install -r requirements.txt
 
 GFPGANv1.3.pth: Place it in flask_api/gfpgan/weights/
 
-
-
 RealESRGAN_x4plus.pth: Place it in flask_api/realesrgan/weights/
 
-
-
 5. Run the Flask server:
-
-
 cd flask_api
 python app.py
 
@@ -84,4 +75,4 @@ GFPGAN
 
 Real-ESRGAN
 
->>>>>>> 06a0714 (Fix: removed embedded Git repo from gfpgan)
+
