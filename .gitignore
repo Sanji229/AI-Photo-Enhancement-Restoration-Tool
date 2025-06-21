@@ -1,30 +1,21 @@
-# Python
+# Ignore Python virtual environments
+flask_api/gfpgan_env/
+
+# Ignore Python cache
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.env
-env/
-venv/
-realesrgan_env/
-gfpgan_env/
-*.sqlite3
+*.py[cod]
 
-# VSCode
+# Ignore IDE/editor settings
 .vscode/
-
-# Node
-node_modules/
-build/
-dist/
-
-# Logs and results
 *.log
-*.bak
-.DS_Store
-inputs/
-static/results/
 
-# Model Weights
-gfpgan/weights/*.pth
-realesrgan/weights/*.pth
+# Ignore input/output images
+flask_api/inputs/
+flask_api/static/results/
+
+# Node modules for frontend
+frontend/node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
