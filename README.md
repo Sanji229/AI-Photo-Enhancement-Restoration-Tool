@@ -1,80 +1,96 @@
+# 🔧 AI-Based Face Image Restoration Web App
 
-# Image_face_restoration
-==============================================================
-# 🧠 Image & Face Restoration using GFPGAN + Real-ESRGAN
+This project uses **GFPGAN** to restore old, blurry, or damaged face images using artificial intelligence. It provides a complete web-based UI built in **React** and a **Flask** backend for processing.
 
-This project is a web-based AI image restoration tool built using Flask, GFPGAN, and Real-ESRGAN. It allows users to restore faces (GFPGAN) and enhance image resolution (Real-ESRGAN), or apply both sequentially.
+---
 
-## 📁 Project Structure
+## 🗂️ Project Structure
 
-
-image_restoration/
-├── flask_api/
-│ ├── app.py
-│ ├── inputs/
-│ ├── static/results/gfpgan/
-│ ├── static/results/realesrgan/
-│ ├── gfpgan/weights/GFPGANv1.3.pth
-│ └── realesrgan/
-│ ├── weights/RealESRGAN_x4plus.pth
-│ └── archs/rrdbnet_arch.py
-├── requirements.txt
-└── README.md
-
-
-
-## 🚀 Features
-
-- Face Restoration using GFPGAN
-- Full Image Super-Resolution using Real-ESRGAN
-- Combined Mode (Face + Resolution Enhancement)
-- REST API support for image upload and download
-
-## 🔧 Installation
-
-1. Clone the repo:
-
-
-git clone https://github.com/TencentARC/GFPGAN.git
-git clone https://github.com/xinntao/Real-ESRGAN.git
+IMAGE-RESTORATION/
+├── flask_api/ # Flask backend
+│ ├── gfpgan/ # GFPGAN model code
+│ ├── gfpgan_env/ # Python virtual environment
+│ ├── inputs/ # Input images for processing
+│ ├── results/ # Processed output images
+│ ├── static/
+│ │ ├── results/ # Processed output images (web accessible)
+│ │ └── uploads/ # Uploaded files (now under static)
+│ ├── templates/ # Flask templates (HTML)
+│ ├── metrics.py # Quality metric calculations (PSNR, SSIM, LPIPS)
+│ └── app.py # Main Flask application
+│
+├── frontend/ # React frontend
+│ ├── public/
+│ ├── src/
+│ │ ├── App.js
+│ │ ├── App.css
+│ │ └── ...
+│ ├── package.json
+│ └── README.md
+│
+├── .gitignore
+├── README.md # ← You are here
+└── requirements.txt # Python dependencies
 
 
 
-2. Create a virtual environment and activate it:
+---
 
-cd image_restoration
-python -m venv venv
-venv\Scripts\activate
+## 🧪 Features
 
-3. Install the requirements:
+- Upload old/damaged face images
+- Detect individual faces
+- Restore selected/all faces using GFPGAN
+- View image quality metrics (PSNR, SSIM, LPIPS)
+- Highlight best/worst restored faces
+- Merge all restored faces into the original image
+- Download restored faces individually or as ZIP
+- Fully responsive React frontend
 
-pip install -r requirements.txt
+---
 
-4. Download pretrained weights:
+## 🚀 Getting Started
 
-GFPGANv1.3.pth: Place it in flask_api/gfpgan/weights/
+### 1. Backend (Flask + GFPGAN)
 
-RealESRGAN_x4plus.pth: Place it in flask_api/realesrgan/weights/
-
-5. Run the Flask server:
+```bash
 cd flask_api
+python -m venv gfpgan_env
+source gfpgan_env/bin/activate  # Windows: gfpgan_env\Scripts\activate
+pip install -r ../requirements.txt
+
+# Run the Flask server
 python app.py
 
 
-6. 📬 API Endpoint
-POST /restore
-Form Data:
+2. Frontend (React)
 
-image: Image file
+cd frontend
+npm install
+npm start
 
-mode: gfpgan, realesrgan, or both
+Open http://localhost:3000 in your browser.
 
-GET /download/<filename>
-Downloads the processed image.
+📸 Example Use Case
 
-7. 🧠 Credits
-GFPGAN
+1.Upload a family photo from the 1980s
 
-Real-ESRGAN
+2.Detect faces using AI
 
+3.Restore them to sharp, high-quality versions
+
+4.Download the enhanced version or view side-by-side comparisons with AI confidence scores
+
+
+Author:-
+Sanjilka Saxena – created this project to demonstrate real-world AI integration with full-stack development.
+
+
+Credits:-
+1.GFPGAN (Tencent ARC)
+
+2.LPIPS metric
+
+
+.\gfpgan_env\Scripts\Activate.ps1 --> to activate environment
 
