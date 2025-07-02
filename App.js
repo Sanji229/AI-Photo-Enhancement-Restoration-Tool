@@ -356,13 +356,13 @@ function App() {
                           <div className="metrics-with-tags">
                             <div className="metrics">
                               <p title="Higher sharpness means the image has more clarity.">
-                                🟢 Sharpness(~30 to 40+ dB): {f.metrics.psnr?.toFixed(2)} dB
+                                🟢 Sharpness(30+ dB): {f.metrics.psnr?.toFixed(2)} dB
                               </p>
                               <p title="Closer to 1 means more similar to original.">
-                                🔵 Structural Similarity(&gt;0.85): {f.metrics.ssim?.toFixed(4)}
+                                🔵 Structural Similarity(Closer to 1): {f.metrics.ssim?.toFixed(4)}
                               </p>
                               <p title="Lower confidence score means more realistic.">
-                                🟡 Restoration Quality(&lt;0.30): {f.metrics.lpips?.toFixed(4)}
+                                🟡 Restoration Quality(Closer to 0): {f.metrics.lpips?.toFixed(4)}
                               </p>
                             </div>
                             {/* <div className="tags-row">
@@ -451,10 +451,10 @@ function App() {
                   />
                   {mergedMetrics && (
                     <div className="metrics">
-                      <p title="Higher Sharpness means the image has more clarity.">🟢 Sharpness(~30 to 40+ dB): {mergedMetrics.psnr?.toFixed(2)} dB</p>
-                      <p title="Closer to 1 means more similar to original.">🔵 Structural Similarity(&gt;0.85): {mergedMetrics.ssim?.toFixed(4)}</p>
+                      <p title="Higher Sharpness means the image has more clarity.">🟢 Sharpness(30+ dB): {mergedMetrics.psnr?.toFixed(2)} dB</p>
+                      <p title="Closer to 1 means more similar to original.">🔵 Structural Similarity(Closer to 1): {mergedMetrics.ssim?.toFixed(4)}</p>
                       <p title="Lower confidence score means more realistic.">
-                        🟡 Restoration Quality(&lt;0.30):{" "}
+                        🟡 Restoration Quality(Closer to 0):{" "}
                         {mergedMetrics.lpips !== undefined
                           ? mergedMetrics.lpips.toFixed(4)
                           : "N/A"}
