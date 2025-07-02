@@ -117,6 +117,5 @@ To activate the Python virtual environment on Windows PowerShell:
 .\gfpgan_env\Scripts\Activate.ps1
 ```
 
-```
 
 
