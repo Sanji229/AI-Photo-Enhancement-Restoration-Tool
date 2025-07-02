@@ -1,96 +1,70 @@
-# 🔧 AI-Based Face Image Restoration Web App
+# Getting Started with Create React App
 
-This project uses **GFPGAN** to restore old, blurry, or damaged face images using artificial intelligence. It provides a complete web-based UI built in **React** and a **Flask** backend for processing.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## 🗂️ Project Structure
+In the project directory, you can run:
 
-IMAGE-RESTORATION/
-├── flask_api/ # Flask backend
-│ ├── gfpgan/ # GFPGAN model code
-│ ├── gfpgan_env/ # Python virtual environment
-│ ├── inputs/ # Input images for processing
-│ ├── results/ # Processed output images
-│ ├── static/
-│ │ ├── results/ # Processed output images (web accessible)
-│ │ └── uploads/ # Uploaded files (now under static)
-│ ├── templates/ # Flask templates (HTML)
-│ ├── metrics.py # Quality metric calculations (PSNR, SSIM, LPIPS)
-│ └── app.py # Main Flask application
-│
-├── frontend/ # React frontend
-│ ├── public/
-│ ├── src/
-│ │ ├── App.js
-│ │ ├── App.css
-│ │ └── ...
-│ ├── package.json
-│ └── README.md
-│
-├── .gitignore
-├── README.md # ← You are here
-└── requirements.txt # Python dependencies
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
----
+### `npm test`
 
-## 🧪 Features
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Upload old/damaged face images
-- Detect individual faces
-- Restore selected/all faces using GFPGAN
-- View image quality metrics (PSNR, SSIM, LPIPS)
-- Highlight best/worst restored faces
-- Merge all restored faces into the original image
-- Download restored faces individually or as ZIP
-- Fully responsive React frontend
+### `npm run build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🚀 Getting Started
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 1. Backend (Flask + GFPGAN)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-cd flask_api
-python -m venv gfpgan_env
-source gfpgan_env/bin/activate  # Windows: gfpgan_env\Scripts\activate
-pip install -r ../requirements.txt
+### `npm run eject`
 
-# Run the Flask server
-python app.py
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-2. Frontend (React)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-cd frontend
-npm install
-npm start
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Open http://localhost:3000 in your browser.
+## Learn More
 
-📸 Example Use Case
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-1.Upload a family photo from the 1980s
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-2.Detect faces using AI
+### Code Splitting
 
-3.Restore them to sharp, high-quality versions
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-4.Download the enhanced version or view side-by-side comparisons with AI confidence scores
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Author:-
-Sanjilka Saxena – created this project to demonstrate real-world AI integration with full-stack development.
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Credits:-
-1.GFPGAN (Tencent ARC)
+### Advanced Configuration
 
-2.LPIPS metric
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
-.\gfpgan_env\Scripts\Activate.ps1 --> to activate environment
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

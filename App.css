@@ -1,0 +1,282 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.overlay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.app {
+  padding: 50px 20px 30px;
+  text-align: center;
+  color: white;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.upload-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.file-input-label,
+.upload-btn {
+  background: white;
+  color: #333;
+  border: 2px solid #66dee8;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.file-input-label:hover,
+.upload-btn:hover {
+  background: #f0f0f0;
+}
+
+.file-input-label input {
+  display: none;
+}
+
+.image-comparison-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.image-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.image-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 15px;
+  width: 240px;
+  text-align: center;
+  color: white;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  margin-left: 8px;
+}
+
+.download-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.creator {
+  color: #66dee8;
+}
+
+/* Side-by-side layout for original/restored face */
+.face-comparisons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.face-comparison {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  width: max-content;
+}
+
+/* Metrics section under restored face */
+.metrics {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  color: #c7f4ff;
+}
+
+/* BEST/WORST Highlight Borders */
+.best-face {
+  border: 3px solid #00ff88;
+  background-color: rgba(15, 60, 45, 0.2);
+}
+
+.worst-face {
+  border: 3px solid #ff4d4d;
+  background-color: rgba(60, 15, 15, 0.2);
+}
+
+.metrics-with-tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.tags-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Tag styles */
+.tags-row {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tag.best {
+  background-color: #c8facc;
+  color: #1c7c1c;
+}
+
+.tag.worst {
+  background-color: #ffcccc;
+  color: #a10000;
+}
+
+.tag.single {
+  background-color: #a0c4ff;
+  color: #003366;
+  border:none;
+}
+
+
+
+
+/* Large comparison container */
+.image-comparison-wrapper.large-compare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding: 30px;
+}
+
+/* Each image (Original / Restored Full) in its own box stacked vertically */
+.large-compare .image-box {
+  width: 100%;
+  max-width: 900px; /* ✅ You can increase this */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Image heading styling */
+.large-compare .image-box h3 {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+/* Make images large */
+.large-compare .large-img {
+  width: 100%;
+  max-width: 900px; /* ✅ Increase this to 1000px or more if needed */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Metric display below image */
+.large-compare .metrics {
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Button container */
+.download-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .large-compare .large-img {
+    width: 95vw;
+  }
+
+  .large-compare .image-box {
+    padding: 0 10px;
+  }
+}
