@@ -2,7 +2,7 @@
 
 This project uses **GFPGAN** to restore old, blurry, or damaged face images using artificial intelligence. It provides a complete web-based UI built in **React** and a **Flask** backend for processing.
 
----
+
 
 ## 🗂️ Project Structure
 
@@ -34,7 +34,7 @@ IMAGE-RESTORATION/
 
 
 
----
+
 
 ## 🧪 Features
 
@@ -51,9 +51,9 @@ IMAGE-RESTORATION/
 
 ## 🚀 Getting Started
 
-### 1. Backend (Flask + GFPGAN)
+# 1. Backend (Flask + GFPGAN)
 
-```bash
+
 cd flask_api
 python -m venv gfpgan_env
 source gfpgan_env/bin/activate  # Windows: gfpgan_env\Scripts\activate
@@ -71,7 +71,7 @@ npm start
 
 Open http://localhost:3000 in your browser.
 
-📸 Example Use Case
+#📸 Example Use Case
 
 1.Upload a family photo from the 1980s
 
@@ -82,15 +82,15 @@ Open http://localhost:3000 in your browser.
 4.Download the enhanced version or view side-by-side comparisons with AI confidence scores
 
 
-Author:-
+#Author:-
 Sanjilka Saxena – created this project to demonstrate real-world AI integration with full-stack development.
 
 
-Credits:-
+#Credits:-
 1.GFPGAN (Tencent ARC)
 
 2.LPIPS metric
 
 
-.\gfpgan_env\Scripts\Activate.ps1 --> to activate environment
+##.\gfpgan_env\Scripts\Activate.ps1 --> to activate environment
 
